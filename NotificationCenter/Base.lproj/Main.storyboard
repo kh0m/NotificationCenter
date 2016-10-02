@@ -31,15 +31,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lvK-DN-QaE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RCi-vG-tE8"/>
                             <constraint firstItem="lvK-DN-QaE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TFv-AL-VCa"/>
                             <constraint firstItem="uCf-x9-PbN" firstAttribute="top" secondItem="lvK-DN-QaE" secondAttribute="bottom" constant="42" id="UaF-dZ-eBS"/>
-                            <constraint firstItem="lvK-DN-QaE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="auH-4a-pir"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="uCf-x9-PbN" secondAttribute="bottom" constant="198" id="ajB-ua-7T3"/>
                             <constraint firstItem="lvK-DN-QaE" firstAttribute="leading" secondItem="uCf-x9-PbN" secondAttribute="leading" id="dDA-sD-sdw"/>
-                            <constraint firstItem="lvK-DN-QaE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="137" id="i6c-an-wJ1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uCf-x9-PbN" secondAttribute="bottom" constant="198" id="lyg-A1-Yey"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lvK-DN-QaE" secondAttribute="trailing" id="fdj-p4-iff"/>
+                            <constraint firstItem="lvK-DN-QaE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kQp-BA-NtO"/>
                             <constraint firstItem="lvK-DN-QaE" firstAttribute="trailing" secondItem="uCf-x9-PbN" secondAttribute="trailing" id="t4O-IN-rPY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="uCf-x9-PbN" id="1W5-Rb-Hdt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

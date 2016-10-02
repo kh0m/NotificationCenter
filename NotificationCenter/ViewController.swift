@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var textField: UITextField!
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        textField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
     }
     
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
     
-    // MARK: Methods
+    // MARK: Subscriptions
     
     // subscribe to show and hide, and what to do when recieved
     func subscribeToKeyboardNotifications() {
@@ -50,12 +54,14 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    // MARK: Methods
+    
     func keyboardWillShow(notification: Notification) {
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     func keyboardWillHide(notification: Notification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin = CGPoint(x: 0, y: 0)
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
@@ -65,5 +71,12 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
